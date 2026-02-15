@@ -1,0 +1,159 @@
+import React from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  Alert,
+  ScrollView,
+} from "react-native";
+
+const App: React.FC = () => {
+  return (
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+      
+      <View style={styles.header}>
+        <Image
+          source={require("./Assets/profile.jpg")}
+          style={styles.profileImage}
+        />
+        <Text style={styles.name}> N Deepthi Nagaraj</Text>
+        <Text style={styles.role}>Computer Science Student|Founder@Kreedartha</Text>
+      </View>
+
+      <View style={styles.card}>
+        <Text style={styles.sectionTitle}>About Me</Text>
+        <Text>
+          Enthusiastic student interested in mobile application development and
+          frontend technologies.
+        </Text>
+      </View>
+
+      <View style={styles.card}>
+        <Text style={styles.sectionTitle}>Skills</Text>
+        <Text>• React Native</Text>
+        <Text>• JavaScript</Text>
+        <Text>• Python</Text>
+        <Text>• HTML & CSS</Text>
+      </View>
+
+      <View style={styles.card}>
+        <Text style={styles.sectionTitle}>Projects</Text>
+
+         <View style={styles.projectCard}>
+          <Text style={styles.projectTitle}>Founder @ Kreedartha</Text>
+          <Text>Founder, Kreedartha – Built an eco-friendly board game startup using reclaimed wood to encourage open-ended, rule-free play for all ages.</Text>
+        </View>
+
+
+        <View style={styles.projectCard}>
+          <Text style={styles.projectTitle}>Resume App</Text>
+          <Text>Simple mobile resume application using React Native.</Text>
+        </View>
+
+        <View style={styles.projectCard}>
+          <Text style={styles.projectTitle}>Student Management System</Text>
+          <Text>Frontend interface for managing student records.</Text>
+        </View>
+      </View>
+
+      <View style={styles.card}>
+        <Text style={styles.sectionTitle}>Education</Text>
+        <Text>Bachelor’s Degree</Text>
+        <Text>RV University</Text>
+      </View>
+
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => Alert.alert("Contact", "Email: deepthi@email.com")}
+      >
+        <Text style={styles.buttonText}>Contact Me</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.buttonOutline}
+        onPress={() => Alert.alert("Resume", "Download coming soon")}
+      >
+        <Text style={styles.buttonOutlineText}>Download Resume</Text>
+      </TouchableOpacity>
+
+      <View style={{ height: 30 }} />
+    </ScrollView>
+  );
+};
+
+export default App;
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#f2f2f2",
+  },
+ header: {
+    alignItems: "center",
+    padding: 20,
+    backgroundColor: "#fff",
+    marginBottom: 10,
+    marginTop: 30,  // Add this line to push it down
+  },
+  profileImage: {
+    width: 120,
+    height: 120,
+    borderRadius: 60,
+    marginBottom: 10,
+  },
+  name: {
+    fontSize: 22,
+    fontWeight: "bold",
+  },
+  role: {
+    fontSize: 16,
+    color: "gray",
+  },
+  card: {
+    backgroundColor: "#fff",
+    marginHorizontal: 15,
+    marginVertical: 8,
+    padding: 15,
+    borderRadius: 10,
+  },
+  sectionTitle: {
+    fontWeight: "bold",
+    fontSize: 16,
+    marginBottom: 8,
+  },
+  projectCard: {
+    backgroundColor: "#f7f7f7",
+    padding: 10,
+    borderRadius: 8,
+    marginBottom: 8,
+  },
+  projectTitle: {
+    fontWeight: "bold",
+  },
+  button: {
+    backgroundColor: "#4a90e2",
+    padding: 15,
+    borderRadius: 8,
+    marginHorizontal: 15,
+    marginTop: 15,
+    alignItems: "center",
+  },
+  buttonText: {
+    color: "#fff",
+    fontWeight: "bold",
+  },
+  buttonOutline: {
+    borderWidth: 2,
+    borderColor: "#4a90e2",
+    padding: 15,
+    borderRadius: 8,
+    marginHorizontal: 15,
+    marginTop: 10,
+    alignItems: "center",
+  },
+  buttonOutlineText: {
+    color: "#4a90e2",
+    fontWeight: "bold",
+  },
+});
